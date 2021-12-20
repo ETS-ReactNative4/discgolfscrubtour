@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import fetch from 'node-fetch';
-import { render } from 'react-dom';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 // IMPORT COMPONENTS
 import Navbar from './components/Navbar';
-import AnnouncementsCard from './components/AnnouncementsCard';
-import PlayersCard from './components/PlayersCard';
-import EventsCard from './components/EventsCard';
 import Cards from './components/Cards'
 
 // IMPORT IMAGES
