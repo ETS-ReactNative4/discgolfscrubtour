@@ -3,6 +3,7 @@ const path = require("path");
 const mariadb = require("mariadb");
 const express = require("express");
 const { response } = require("express");
+const dbInfo = require("./dbInfo.json")
 
 const PORT = process.env.PORT || 3001;
 
@@ -12,11 +13,12 @@ app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 app.get("/get-announcements", (req,res) => {
     //create mysql connection
+    console.log(dbInfo)
     mariadb.createConnection({
-            host: "192.168.0.119", 
-            user: "dgstApp",
-            password: "dgstApp1#",
-            database: "scrub_tour"
+            host: dbInfo.host, 
+            user: dbInfo.user,
+            password: dbInfo.password,
+            database: dbInfo.database
         })
         .then(conn => {
             conn.query("SELECT * FROM announcements;")
@@ -45,10 +47,10 @@ app.get("/get-announcements", (req,res) => {
 app.get("/get-events", (req,res) => {
     //create mysql connection
     mariadb.createConnection({
-            host: "192.168.0.119", 
-            user: "dgstApp",
-            password: "dgstApp1#",
-            database: "scrub_tour"
+            host: dbInfo.host, 
+            user: dbInfo.user,
+            password: dbInfo.password,
+            database: dbInfo.database
         })
         .then(conn => {
             conn.query("SELECT * FROM events;")
@@ -79,10 +81,10 @@ app.get("/get-events", (req,res) => {
 app.get("/get-players", (req,res) => {
     //create mysql connection
     mariadb.createConnection({
-            host: "192.168.0.119", 
-            user: "dgstApp",
-            password: "dgstApp1#",
-            database: "scrub_tour"
+            host: dbInfo.host, 
+            user: dbInfo.user,
+            password: dbInfo.password,
+            database: dbInfo.database
         })
         .then(conn => {
             conn.query("SELECT * FROM scrub_players ORDER BY scrub_tour_rank;")
