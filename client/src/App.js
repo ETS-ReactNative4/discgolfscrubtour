@@ -58,7 +58,7 @@ class App extends Component {
           </div>
           <Router>
             <Navbar/>
-            <Cards/>
+            <Cards/> 
           </Router>
         </div>  
       );
