@@ -3,6 +3,7 @@
 # dependencies
 /client/node_modules
 /node_modules
+/server/dbInfo.json
 
 # testing
 /coverage
@@ -16,5 +17,4 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-/server/dbInfo.json
 
