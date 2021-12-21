@@ -28,8 +28,8 @@ class PlayersCard extends Component {
         const isLoaded = this.state.isLoaded;
         if (!isLoaded) {
             return (
-            <div className="announcements">
-                <p className="announcements-loading">
+            <div className="players">
+                <p className="players-loading">
                 Loading...    
                 </p>
             </div>
