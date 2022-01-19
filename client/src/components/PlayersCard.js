@@ -50,7 +50,7 @@ class PlayersCard extends Component {
                         <TableBody>
                         {data.map((row) => (
                             <TableRow key={row.date} sx={{ '&:last-child td, &:last-child th': {border: 0} }}>
-                                <TableCell component="th" scope="row">{row.rank}</TableCell>
+                                <TableCell component="th" scope="row" align="center">{row.rank}</TableCell>
                                 <TableCell>{row.name}</TableCell>
                                 <TableCell>{row.year_joined}</TableCell>
                             </TableRow>

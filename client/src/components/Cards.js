@@ -13,6 +13,7 @@ function Cards() {
                         <AnnouncementsCard/>
                         <EventsCard/>
                         <PlayersCard/>
+                        {/* <RecentResults/> */}
                     </ul>
                 </div>
             </div>

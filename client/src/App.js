@@ -54,6 +54,7 @@ class App extends Component {
           <Router>
             <Navbar/>
             <Cards/> 
+            {/* <Page/> THIS WILL BE WERE THE NAVIGATED PAGE WILL LIE */}
           </Router>
         </div>  
       );

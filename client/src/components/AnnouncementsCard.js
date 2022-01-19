@@ -40,11 +40,15 @@ class AnnouncementsCard extends Component{
           <Link to="/announcements" className='cards__item__link'>
             <TableContainer>
               <Table sx={{minWidth: 650}} aria-label="simple table">
+                  <TableHead>
+                      <TableRow>
+                          <TableCell colSpan={3}>Announcements</TableCell>
+                      </TableRow>
+                  </TableHead>
                   <TableBody>
                   {data.map((row) => (
                       <TableRow key={row.title} sx={{ '&:last-child td, &:last-child th': {border: 0} }}>
-                        <TableCell component="th" scope="row">{row.title}</TableCell>
-                        <TableCell align="right">{row.date}</TableCell>
+                        <TableCell component="th" scope="row">{row.title} - {row.date}<br/>{row.message}</TableCell>
                       </TableRow>
                   ))}
                   </TableBody>

@@ -4,41 +4,37 @@
 
 .App-logo {
   /*animation: App-logo-spin infinite 20s linear;*/
-  height: 300px;
-  width: 450px;
+  height: 20vw;
   position: relative;
-  right: 50px;
-  bottom: 15px;
+  align-content: center;
+  padding: 1px;
 }
 
 .App-image1{
   height: 9.85vw;
-  position: relative;
-  right: 100px;
-  bottom: 95px;
-  padding: 5px;
+  align-content: center;
+  padding-bottom: 45px;
+  padding-right: 5px;
 }
 
 .App-image2{
   height: 9.85vw;
-  position: relative;
-  right: 100px;
-  bottom: 95px;
-  padding: 5px;
+  align-content: center;
+  padding-bottom: 45px;
+  padding-right: 5px;
 }
 
 .App-image3{
   height: 9.85vw;
-  position: relative;
-  right: 100px;
-  bottom: 95px;
-  padding: 5px;
+  align-content: center;
+  padding-bottom: 45px;
+  padding-right: 5px;
 }
 
 .App-header {
   background-color: #222;
-  height: 225px;
-  padding: 10px;
+  height: 18vw;
+  padding: 3px;
   color: white;
 }
 
