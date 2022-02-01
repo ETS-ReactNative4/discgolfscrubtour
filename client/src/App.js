@@ -7,7 +7,7 @@ import Navbar from './components/Navbar';
 import Cards from './components/Cards'
 
 // IMPORT IMAGES
-import logo from '../resources/DiscGolfScrubTour.png';
+import logo from '../resources/dgst-with-basket.png';
 import boulder from '../resources/boulder-disc-golf.png';
 import blueRibbonPines from '../resources/blue-ribbon-pine-disc-golf.jpg';
 import beaverRanch from '../resources/beaver-ranch-disc-golf.png';
@@ -32,9 +32,6 @@ class App extends Component {
         <div className="App">
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo"/> 
-            <img src={boulder} className="App-image1" alt="boulder"/>
-            <img src={blueRibbonPines} className="App-image2" alt="blueRibbonPines"/>
-            <img src={beaverRanch} className="App-image3" alt="beaverRanch"/>
           </div>
           
           <p className="App-intro">
@@ -47,9 +44,6 @@ class App extends Component {
         <div className="App">
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo"/> 
-            <img src={boulder} className="App-image1" alt="boulder"/>
-            <img src={blueRibbonPines} className="App-image2" alt="blueRibbonPines"/>
-            <img src={beaverRanch} className="App-image3" alt="beaverRanch"/>
           </div>
           <Router>
             <Navbar/>

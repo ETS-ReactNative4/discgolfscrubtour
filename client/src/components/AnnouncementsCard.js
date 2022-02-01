@@ -48,7 +48,7 @@ class AnnouncementsCard extends Component{
                   <TableBody>
                   {data.map((row) => (
                       <TableRow key={row.title} sx={{ '&:last-child td, &:last-child th': {border: 0} }}>
-                        <TableCell component="th" scope="row">{row.title} - {row.date}<br/>{row.message}</TableCell>
+                        <TableCell component="th" scope="row"><b>{row.title}</b> - {row.date}<br/>{row.message}</TableCell>
                       </TableRow>
                   ))}
                   </TableBody>

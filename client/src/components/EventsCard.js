@@ -48,11 +48,11 @@ class EventsCard extends Component {
                         <TableBody>
                         {data.map((row) => (
                             <TableRow key={row.date} sx={{ '&:last-child td, &:last-child th': {border: 0} }}>
-                                <TableRow>
-                                    <TableCell component="th" scope="row" colSpan={3}>{row.eventName}</TableCell>                                
-                                    <TableCell>{row.eventLocation}</TableCell>
-                                </TableRow>                                
-                                <TableCell>{row.eventStart}</TableCell>
+                                <TableCell component="th" scope="row" colSpan={3}>
+                                    <b>{row.eventName}</b> - <i style={{color:'orange'}}>{row.eventLocation}</i>
+                                    <p style={{paddingLeft:'30px'}}>{row.eventDescription}</p>
+                                    <p style={{paddingLeft:'30px'}}><b>{row.eventStart}<i style={{paddingRight:'0.25cm',paddingLeft:'0.25cm'}}>to</i>{row.eventEnd}</b></p>
+                                </TableCell>                                       
                             </TableRow>
                         ))}
                         </TableBody>

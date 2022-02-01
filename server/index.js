@@ -5,7 +5,7 @@ const mysqldb = require("mysql");
 const express = require("express");
 const { response } = require("express");
 const dbInfo = require("./dbInfo.json");
-const dateFormat = require('date-format');
+const dateFormat = require("date-format");
 
 const PORT = process.env.PORT || 3001;
 
@@ -56,8 +56,8 @@ app.get("/get-events", (req,res) => {
                     var objs = [];
                     for (var i=0; i < rows.length; i++){
                         objs.push({
-                            eventStart: dateFormat.asString('MM/dd/yyyy', rows[i].event_start_date), 
-                            eventEnd: dateFormat.asString('MM/dd/yyyy', rows[i].event_end_date), 
+                            eventStart: dateFormat.asString('MM / dd / yyyy', rows[i].event_start_date), 
+                            eventEnd: dateFormat.asString('MM / dd / yyyy', rows[i].event_end_date),
                             eventName: rows[i].event_name,
                             eventDescription: rows[i].event_description, 
                             eventLocation: rows[i].event_location

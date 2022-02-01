@@ -11,6 +11,7 @@ function Cards() {
                 <div className="cards__wrapper">
                     <ul className="cards__items">
                         <AnnouncementsCard/>
+                        
                         <EventsCard/>
                         <PlayersCard/>
                         {/* <RecentResults/> */}

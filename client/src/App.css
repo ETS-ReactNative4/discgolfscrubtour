@@ -4,10 +4,10 @@
 
 .App-logo {
   /*animation: App-logo-spin infinite 20s linear;*/
-  height: 20vw;
+  height: 15vw;
+  max-height: 150px;
   position: relative;
-  align-content: center;
-  padding: 1px;
+  padding: 10px;
 }
 
 .App-image1{
@@ -33,7 +33,8 @@
 
 .App-header {
   background-color: #222;
-  height: 18vw;
+  height: 18vw;  
+  max-height: 175px;
   padding: 3px;
   color: white;
 }
