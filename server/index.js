@@ -107,6 +107,38 @@ app.get("/get-players", (req,res) => {
         });
 });
 
+app.get("/get-player-stat-info", (req,res) => {
+    //create mysql connection
+    mariadb.createConnection({
+            host: dbInfo.host, 
+            user: dbInfo.user,
+            password: dbInfo.password,
+            database: dbInfo.database
+        }).then(conn => {
+            conn.query("SELECT * FROM scrub_players ORDER BY scrub_tour_rank;")
+                .then(rows => {
+                    var objs = [];
+                    for (var i=0; i < rows.length; i++){
+                        objs.push({
+                            rank: rows[i].scrub_tour_rank == -1 ? '-' : rows[i].scrub_tour_rank, 
+                            name: rows[i].player_name, 
+                            year_joined: rows[i].year_joined, 
+                            woody: rows[i].woody, 
+                            scrub_lord: rows[i].scrub_lord
+                        });
+                    }
+                    conn.end();
+                    res.send(JSON.stringify(objs));
+                })
+                .catch(err => {
+                    throw err;
+                })
+            })
+        .catch(err => {
+            throw err;
+        });
+});
+
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
 })

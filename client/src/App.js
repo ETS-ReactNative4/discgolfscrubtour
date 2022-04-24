@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, Routes} from 'react-router-dom';
 
 // IMPORT COMPONENTS
 import Navbar from './components/Navbar';
-import Cards from './components/Cards'
+import Cards from './components/Cards';
+import PlayersPage from './pages/PlayersPage';
+import EventsPage from './pages/EventsPage';
+import CoursesPage from './pages/CoursesPage';
+import StatisticsPage from './pages/StatisticsPage';
 
 // IMPORT IMAGES
 import logo from '../resources/dgst-with-basket.png';
@@ -46,8 +50,14 @@ class App extends Component {
             <img src={logo} className="App-logo" alt="logo"/> 
           </div>
           <Router>
-            <Navbar/>
-            <Cards/> 
+            <Navbar/>            
+            <Routes>
+              <Route path="/" element={<Cards/>}/>
+              <Route path="players" element={<PlayersPage selected="None"/>}/>
+              <Route path="events" element={<EventsPage/>}/>
+              <Route path="courses" element={<CoursesPage/>}/>
+              <Route path="stats" element={<StatisticsPage/>}/>
+            </Routes>
             {/* <Page/> THIS WILL BE WERE THE NAVIGATED PAGE WILL LIE */}
           </Router>
         </div>  

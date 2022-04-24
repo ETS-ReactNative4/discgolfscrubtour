@@ -15,6 +15,10 @@ function Navbar() {
         <nav className="navbar-nav">
             <div className="navbar-container">
                 <hr style={{color: 'white'}}/>
+                <Link to='/' className='navbar-logo' style={linkStyle}>
+                    HOME
+                </Link>
+
                 <Link to='/players' className='navbar-logo' style={linkStyle}>
                     PLAYERS
                 </Link>
@@ -27,8 +31,8 @@ function Navbar() {
                     COURSES
                 </Link>
                 
-                <Link to='/standings' className='navbar-logo' style={linkStyle}>
-                    STANDINGS
+                <Link to='/stats' className='navbar-logo' style={linkStyle}>
+                    STATS
                 </Link> 
                 {/*<div className='menu-icon'>
                     
