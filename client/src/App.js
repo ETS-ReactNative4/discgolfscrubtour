@@ -53,7 +53,7 @@ class App extends Component {
             <Navbar/>            
             <Routes>
               <Route path="/" element={<Cards/>}/>
-              <Route path="players" element={<PlayersPage selected="None"/>}/>
+              <Route path="players" element={<PlayersPage selectedPlayer="None"/>}/>
               <Route path="events" element={<EventsPage/>}/>
               <Route path="courses" element={<CoursesPage/>}/>
               <Route path="stats" element={<StatisticsPage/>}/>

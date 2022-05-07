@@ -139,6 +139,39 @@ app.get("/get-player-stat-info", (req,res) => {
         });
 });
 
+app.get("/get-all-player-info", (req,res) => {
+    mariadb.createConnection({
+        host: dbInfo.host, 
+        user: dbInfo.user,
+        password: dbInfo.password,
+        database: dbInfo.database
+    }).then(conn => {
+        conn.query("SELECT player_name, player_photo, scrub_tour_rank, scrub_tour_points, current_tag, average_rating, average_score FROM (SELECT * FROM scrub_players as t1 JOIN (SELECT player_id, AVG(rating) as average_rating, AVG(score_from_par) as average_score FROM scorecards WHERE NOT(player_id = -1) GROUP BY player_id) as t2 USING (player_id)) as t3;")
+            .then(rows => {
+                var objs = [];
+                for (var i=0; i < rows.length; i++){
+                    objs.push({
+                        player_name: rows[i].player_name,
+                        player_photo: rows[i].player_photo,
+                        rank: rows[i].scrub_tour_rank == -1 ? 'N/A' : rows[i].scrub_tour_rank,
+                        points: rows[i].scrub_tour_points, 
+                        tag: rows[i].current_tag,
+                        average_rating: rows[i].average_rating,
+                        average_score: rows[i].average_score
+                    });
+                }
+                conn.end();
+                res.send(JSON.stringify(objs));
+            })
+            .catch(err => {
+                throw err;
+            })
+        })
+    .catch(err => {
+        throw err;
+    });
+});
+
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
 })
